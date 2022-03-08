@@ -23,7 +23,7 @@ EthernetServer server(80);
   int ledPin5 = 5;
 */
 
-String readString = String(40); //строка для получения данных с адреса длиной 30 символов
+String readString = String(50); //строка для получения данных с адреса длиной 30 символов
 
 //для переключения режимов работы МКК использую логическую переменную
 boolean MOD = false; // автоматический режим работы по температуре по умолчанию
@@ -142,7 +142,7 @@ void loop() {
       if (client.available()) {
         char c = client.read();
         // читаем char c от char HTTP запроса
-        if (readString.length() < 40) {
+        if (readString.length() < 50) {
           //сохранить символы в строку
           readString.concat(c);
         }
